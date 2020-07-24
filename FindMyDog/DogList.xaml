@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FindMyDog.DogList"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:FindMyDog"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
+    mc:Ignorable="d">
+
+
+    <!--<ContentPage.BindingContext>
+        <local:DogsViewModel />
+    </ContentPage.BindingContext>-->
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#e6ede8">
+            <SearchBar Placeholder="Dog Name" TextChanged="SearchBar_TextChanged" />
+            <ListView
+                x:Name="liste"
+                ItemTapped="liste_ItemTapped"
+                RowHeight="110">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid rainbows:DebugRainbow.IsDebug="False">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="3*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image
+                                    Grid.Column="0"
+                                    HorizontalOptions="FillAndExpand"
+                                    Source="{Binding CoverImage}"
+                                    VerticalOptions="FillAndExpand" />
+
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Label
+                                        Grid.Row="0"
+                                        Margin="5,8"
+                                        FontAttributes="Bold"
+                                        FontSize="Large"
+                                        Text="{Binding Name}" />
+                                    <!--
+                                    <ScrollView Grid.Row="1" Margin="5,0,5,10">
+                                        <Label Text="The Whippet dog breed was a poacher's best friend, speedily going after rabbits and other small game. Today the Whippet competes in agility, flyball, lure coursing, rally, and obedience and is a loving therapy dog. His unique nature, friendly personality, and stylish look make him a favorite as a family companion as well as in the show ring." />
+                                    </ScrollView>
+                                    -->
+
+                                    <Label
+                                        Grid.Row="1"
+                                        Margin="5"
+                                        FontSize="Default"
+                                        Text="{Binding GroupName}" />
+
+                                </Grid>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

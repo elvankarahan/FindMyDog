@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FindMyDog.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:FindMyDog"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Image
+            Margin="5,10"
+            Aspect="AspectFill"
+            Source="dog" />
+
+        <Image
+            Margin="5,10"
+            Aspect="AspectFill"
+            Source="{Binding Image}" />
+
+        <Button
+            x:Name="DogTag"
+            Grid.Row="1"
+            Margin="5,0"
+            BackgroundColor="#ebebeb"
+            Clicked="Button_Clicked"
+            FontAttributes="Bold"
+            FontSize="Large"
+            Text="{Binding Tag}"
+            TextColor="Gray" />
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="0"
+                Margin="5,0,0,0"
+                BackgroundColor="#686752"
+                Command="{Binding TakePhotoCommand}"
+                FontAttributes="Bold"
+                FontSize="Large"
+                Text="Take Photo"
+                TextColor="White" />
+
+            <Button
+                Grid.Column="1"
+                Margin="0,0,5,0"
+                BackgroundColor="#686752"
+                Command="{Binding PickPhotoCommand}"
+                FontAttributes="Bold"
+                FontSize="Large"
+                Text="PICK Photo"
+                TextColor="White" />
+        </Grid>
+        <Button
+            x:Name="tempo"
+            Grid.Row="3"
+            Margin="3,0"
+            BackgroundColor="#ebebeb"
+            Clicked="tempo_Clicked"
+            FontAttributes="Bold"
+            FontSize="Large"
+            Text="Dog LIST"
+            TextColor="Gray" />
+
+    </Grid>
+
+</ContentPage>

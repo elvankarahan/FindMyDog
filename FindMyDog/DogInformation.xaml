@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="FindMyDog.DogInformation"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:rainbows="clr-namespace:Xamarin.Forms.DebugRainbows;assembly=Xamarin.Forms.DebugRainbows"
+    mc:Ignorable="d">
+
+    <StackLayout rainbows:DebugRainbow.IsDebug="False">
+        <ScrollView>
+            <Grid BackgroundColor="#e6ede8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="20" />
+
+                </Grid.RowDefinitions>
+                <!--  first row photo  -->
+                <Image
+                    x:Name="DogImage"
+                    Grid.Row="0"
+                    Margin="10,20"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Start" />
+                <!--  second row grid  -->
+                <Grid
+                    Grid.Row="1"
+                    rainbows:DebugRainbow.IsDebug="False"
+                    RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="Start"
+                        Source="group.png"
+                        VerticalOptions="Start" />
+                    <Image
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalOptions="Start"
+                        Source="height.png"
+                        VerticalOptions="Start" />
+                    <Image
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        HorizontalOptions="Start"
+                        Source="weight.png"
+                        VerticalOptions="Start" />
+                    <Image
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        HorizontalOptions="Start"
+                        Source="lifespanp.png"
+                        VerticalOptions="Start" />
+
+                    <Label
+                        x:Name="GroupName"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="0,-25"
+                        FontSize="Micro"
+                        HorizontalOptions="Center" />
+                    <Label
+                        x:Name="Height"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="0,-25"
+                        FontSize="Micro"
+                        HorizontalOptions="Center" />
+                    <Label
+                        x:Name="Weight"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        Margin="0,-25"
+                        FontSize="Micro"
+                        HorizontalOptions="Center" />
+                    <Label
+                        x:Name="LifeSpan"
+                        Grid.Row="1"
+                        Grid.Column="3"
+                        Margin="0,-25"
+                        FontSize="Micro"
+                        HorizontalOptions="Center" />
+                </Grid>
+                <!--  third row label  -->
+                <Label
+                    x:Name="DogName"
+                    Grid.Row="2"
+                    Margin="10,0"
+                    FontAttributes="Bold"
+                    FontSize="Title"
+                    TextColor="Gray" />
+
+                <Label
+                    x:Name="DogInfo"
+                    Grid.Row="3"
+                    Margin="10,10,10,30" />
+
+                <Image Grid.Row="4" Source="App.png" />
+            </Grid>
+        </ScrollView>
+
+    </StackLayout>
+</ContentPage>
